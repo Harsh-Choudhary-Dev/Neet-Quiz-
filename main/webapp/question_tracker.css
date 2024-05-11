@@ -1,0 +1,34 @@
+:root {
+  --font-family: "Josefin Sans", sans-serif;
+  --font-optical-sizing: auto;
+  --font-weight: 700px;
+  --font-style: normal;
+  --color:rgb(91, 8, 147);
+  
+}
+body{
+  font-family: var(--font-family);
+      font-optical-sizing: var(--font-optical-sizing);
+      font-weight: var(--font-weight);
+      font-style: var(--font-style);
+}
+
+    .card{
+      height: 24vh;
+      width: 46vh;
+      background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+      color: var(--color);
+      font-size: 4vh;
+      border-radius: 5vh;
+      
+    }
+
+.ques-box{
+  border-radius: 3vh;
+  margin-top: 2vh;
+}
+
+#myChart{
+  width: 7vh;
+} 

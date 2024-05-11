@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Specify Your weak chapters</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Signika:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <style>
+    body{
+background: #85209F;
+background: linear-gradient(45deg, #85209F, #124791);
+    }
+    .text-font{
+        font-family: 'Catamaran', sans-serif;
+        font-family: 'Signika', sans-serif;
+        
+        color: rgb(12, 46, 76);
+    }
+    .form-container{
+        background-color: aliceblue;
+        /*width: fit-content;*/
+        margin: auto;
+        border-radius: 4vh;
+        width: 95vh;
+        box-shadow: 10px 10px;
+        margin-top: 12vh;
+        max-width: 95%;
+    }
+    select{
+        width: 70vh;
+        max-width:30vh ;
+        min-width: 30vh;
+    }
+
+    .btn-primary{
+
+background: #1E2470;
+background: linear-gradient(135deg, #1E2470, #1F7EFF);
+    }
+
+    .btn-danger{
+background: #FF0104;
+background: linear-gradient(135deg, #FF0104, #5A0203);
+    }
+
+
+  </style>
+  <body>
+    <div class="d-flex justify-content-center  fs-4 form-container">
+        <div class="d-flex flex-column mb-3 text-center text-font">
+            <div class="p-2">
+                <p>Identify the specific chapter you'd like to focus on, and our backend system will generate custom questions tailored to strengthen your understanding in that area.</p>
+            </div>
+            <div class="p-2">
+                Select Chapter you are weak at:
+            </div>
+            <div class="p-2">
+                <form action="servlet_1" method="post">
+                    <div class="options-container">
+                        <p>
+                            <select name="chapter" required class="chapter">
+                                <option value="" hidden >select chapter</option>
+                                <option value="The Living World">The Living World</option>
+                                <option value="Biological Classification">Biological Classification</option>
+                                <option value="Plant Kingdom">Plant Kingdom</option>
+                                <option value="Animal Kingdom">Animal Kingdom</option>
+                                <option value="Morphology of Flowering Plants">Morphology of Flowering Plants</option>
+                                <option value="Anatomy of Flowering Plants">Anatomy of Flowering Plants</option>
+                                <option value="Structural Organisation in Animals">Structural Organisation in Animals</option>
+                                <option value="Cell: The Unit of Life">Cell: The Unit of Life</option>
+                                <option value="Biomolecules">Biomolecules</option>
+                                <option value="Cell Cycle and Cell Division">Cell Cycle and Cell Division</option>
+                                <option value="Transport in Plants">Transport in Plants</option>
+                                <option value="Photosynthesis in Higher Plants">Photosynthesis in Higher Plants</option>
+                                <option value="Respiration in Plants">Respiration in Plants</option>
+                                <option value="Plant Growth and Development">Plant Growth and Development</option>
+                                <option value="Digestion and Absorption">Digestion and Absorption</option>
+                                <option value="Breathing and Exchange of Gases">Breathing and Exchange of Gases</option>
+                                <option value="Body Fluids and Circulation">Body Fluids and Circulation</option>
+                                <option value="Locomotion and Movement">Locomotion and Movement</option>
+                                <option value="Sexual Reproduction in Flowering plants">Sexual Reproduction in Flowering plants</option>
+                                <option value="Human Reproduction">Human Reproduction</option>
+                                <option value="Reproductive Health">Reproductive Health</option>
+                                <option value="Principles of Inheritance and Variation">Principles of Inheritance and Variation</option>
+                                <option value="Molecular Basis of Inheritance">Molecular Basis of Inheritance</option>
+                                <option value="Evolution">Evolution</option>
+                                <option value="Human Health and Disease">Human Health and Disease</option>
+                                <option value="Strategies for Enhancement in Food Production">Strategies for Enhancement in Food Production</option>
+                                <option value="Microbes in Human Welfare">Microbes in Human Welfare</option>
+                                <option value="Biotechnology: Principles and Processes">Biotechnology: Principles and Processes</option>
+                                <option value="Biotechnology and its Applications">Biotechnology and its Applications</option>
+                                <option value="Organisms and Populations">Organisms and Populations</option>
+                                <option value="Ecosystem">Ecosystem</option>
+                                <option value="Environmental Issues">Environmental Issues</option>
+                            </select>
+                            <!-- <button type="button" class="btn btn-danger mx-4">Remove</button> -->
+                        </p>
+                      </div>
+                      
+                      <button type="button" class="btn btn-primary" onclick="add_more()">Add more</button>
+                      <button type="submit" class="btn btn-primary"  >submit</button>
+                
+                    </form>
+            </div>
+            <!-- <div class="p-2">Flex item 3</div> -->
+          </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const options_container = document.querySelector(".options-container")
+        const options_html = `<p>
+      
+        <select name="chapter" class="chapter">
+            <option value="" hidden >select chapter</option>
+            <option value="The Living World">The Living World</option>
+            <option value="Biological Classification">Biological Classification</option>
+            <option value="Plant Kingdom">Plant Kingdom</option>
+            <option value="Animal Kingdom">Animal Kingdom</option>
+            <option value="Morphology of Flowering Plants">Morphology of Flowering Plants</option>
+            <option value="Anatomy of Flowering Plants">Anatomy of Flowering Plants</option>
+            <option value="Structural Organisation in Animals">Structural Organisation in Animals</option>
+            <option value="Cell: The Unit of Life">Cell: The Unit of Life</option>
+            <option value="Biomolecules">Biomolecules</option>
+            <option value="Cell Cycle and Cell Division">Cell Cycle and Cell Division</option>
+            <option value="Transport in Plants">Transport in Plants</option>
+            <option value="Photosynthesis in Higher Plants">Photosynthesis in Higher Plants</option>
+            <option value="Respiration in Plants">Respiration in Plants</option>
+            <option value="Plant Growth and Development">Plant Growth and Development</option>
+            <option value="Digestion and Absorption">Digestion and Absorption</option>
+            <option value="Breathing and Exchange of Gases">Breathing and Exchange of Gases</option>
+            <option value="Body Fluids and Circulation">Body Fluids and Circulation</option>
+            <option value="Locomotion and Movement">Locomotion and Movement</option>
+            <option value="Sexual Reproduction in Flowering plants">Sexual Reproduction in Flowering plants</option>
+            <option value="Human Reproduction">Human Reproduction</option>
+            <option value="Reproductive Health">Reproductive Health</option>
+            <option value="Principles of Inheritance and Variation">Principles of Inheritance and Variation</option>
+            <option value="Molecular Basis of Inheritance">Molecular Basis of Inheritance</option>
+            <option value="Evolution">Evolution</option>
+            <option value="Human Health and Disease">Human Health and Disease</option>
+            <option value="Strategies for Enhancement in Food Production">Strategies for Enhancement in Food Production</option>
+            <option value="Microbes in Human Welfare">Microbes in Human Welfare</option>
+            <option value="Biotechnology: Principles and Processes">Biotechnology: Principles and Processes</option>
+            <option value="Biotechnology and its Applications">Biotechnology and its Applications</option>
+            <option value="Organisms and Populations">Organisms and Populations</option>
+            <option value="Ecosystem">Ecosystem</option>
+            <option value="Environmental Issues">Environmental Issues</option>
+        </select>
+        <button type="button" class="btn btn-danger mx-4" id="remove_${generateQuickGuid()}" onclick="_remove(this.id)">Remove</button>
+    </p>`
+let opt_value = []
+        function get_option(){
+            let chapters =  document.querySelectorAll(".chapter")
+            chapters.forEach((chapter)=>{
+                opt_value.push(chapter.value)
+            })
+            console.log(opt_value)
+        }
+
+        function add_more(){
+            options_container.innerHTML += options_html
+        }
+
+        function generateQuickGuid() {
+            return Math.random().toString(16).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15);
+        }
+
+        function _remove(id){
+            document.getElementById(id).parentElement.remove()
+        }
+
+        function send_servlet(){
+            get_option()
+            // Create a new XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // Configure it: POST-request for the servlet
+            xhr.open("POST", "servlet_1", true);
+            
+            // Set the request header to send JSON data
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            // Convert the array to JSON and send it in the request body
+            xhr.send(JSON.stringify(opt_value));
+            window.location.href="quiz.jsp"
+              }
+        
+
+    </script>
+  </body>
+</html>

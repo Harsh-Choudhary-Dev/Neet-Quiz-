@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Chartist Tests</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  </head>
+  <style>
+    .ct-chart{
+        width: 75vh;
+    }
+    .ct-label {
+        font-size: 5vh;
+        fill: aliceblue;
+    }
+  </style>
+  <body>
+    <!-- Site content goes here !-->
+    <h1>sdsdsd</h1>
+    <div class="ct-chart ct-golden-section" id="chart1"></div>
+<div class="ct-chart ct-golden-section" id="chart2"></div>
+
+<script>
+    new Chartist.Pie('.ct-chart', {
+        series: [20, 10, 30, 40]
+      }, {
+        donut: true,
+        donutWidth: 60,
+        donutSolid: true,
+        startAngle: 270,
+        showLabel: true
+      });
+</script>
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+  
+  </body>
+</html>
