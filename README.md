@@ -28,10 +28,10 @@ This project is a comprehensive NEET (National Eligibility cum Entrance Test) qu
 
 **Dependencies:**
 
-- Python
-- MVC framework (e.g., Django, Flask)
-- Servlet container (e.g., Apache Tomcat)
-- Database system (e.g., MySQL, PostgreSQL)
+- Java
+- MVC framework servlet
+- Servlet container Apache Tomcat
+- Database system MySQL
 
 **Installation:**
 
